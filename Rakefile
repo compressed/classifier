@@ -11,7 +11,7 @@ begin
     s.author      = "Luis Parravicini"
     s.email       = "lparravi@gmail.com"
 
-    s.add_dependency "activesupport", ">= 2.2.2"
+    s.add_dependency "activesupport", ">= 3.0.0"
     s.add_dependency "ruby-stemmer", ">= 0.5.1"
   end
 rescue LoadError

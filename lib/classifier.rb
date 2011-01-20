@@ -25,6 +25,7 @@
 # License::   LGPL
 
 require 'active_support'
+require 'active_support/core_ext' 
 require 'lingua/stemmer'
 require 'classifier/base'
 require 'classifier/bayes'
