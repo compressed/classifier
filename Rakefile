@@ -4,10 +4,10 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
-    s.name        = "logankoester-classifier"
+    s.name        = "kitop-classifier"
     s.summary     = "A general classifier module to allow Bayesian and other types of classifications."
-    s.description = "Bayesian classifier and others."
-    s.homepage    = "http://github.com/logankoester/classifier"
+    s.description = "Bayesian, LSI classifier and others."
+    s.homepage    = "http://github.com/kitop/classifier"
     s.author      = "Luis Parravicini"
     s.email       = "lparravi@gmail.com"
 
