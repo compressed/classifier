@@ -84,7 +84,7 @@ module Classifier
     # Removes an item from the database, if it is indexed. 
     #
     def remove_item( item )
-      if @items.keys.contain? item
+      if @items.keys.index item
         @items.remove item
         @version += 1
       end
