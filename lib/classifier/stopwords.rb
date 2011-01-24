@@ -1,6 +1,7 @@
 module Classifier
 
   module StopWords
+    STOP_WORDS = {}
 
     def self.for(language, lang_dir=nil)
       unless STOP_WORDS.has_key?(language)
@@ -37,6 +38,5 @@ module Classifier
         end
       end
         
-    STOP_WORDS = {}
   end
 end

@@ -2,8 +2,7 @@ module Classifier
   class Base
     
     def initialize(options = {})
-      options.reverse_merge!(:language => 'en')
-      options.reverse_merge!(:encoding => 'UTF_8')
+      options.reverse_merge!(:language => 'en', :encoding => 'UTF_8')
 
       @options = options
     end
