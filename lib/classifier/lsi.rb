@@ -85,7 +85,7 @@ module Classifier
     #
     def remove_item( item )
       if @items.keys.index item
-        @items.remove item
+        @items.delete item
         @version += 1
       end
     end
@@ -297,13 +297,17 @@ module Classifier
 
     def marshal_dump
       [ @auto_rebuild, @word_list, @items, @version, @built_at_version,
-        @options,
+        @options
       ]
     end
 
     def marshal_load(data)
       @auto_rebuild, @word_list, @items, @version, @built_at_version,
         @options = data
+    end
+
+    def to_yaml_properties
+      %w{ @auto_rebuild @word_list @items @version @built_at_version @options }
     end
 
     private
