@@ -37,6 +37,7 @@ module Classifier
     # You can run remove_stemmer to force a new Stemmer to be initialized.
     def remove_stemmer
       @stemmer = nil
+      self
     end
   	
   	private 
