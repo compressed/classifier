@@ -31,7 +31,7 @@ class Bayes < Classifier::Base
 	#     b.train "The other", "The other text"
 	def train(category, text)
 		category = prepare_category_name(category)
-		word_hash(text).each do |word, count|
+		clean_word_hash(text).each do |word, count|
 			@categories[category][word]     ||=     0
 			@categories[category][word]      +=     count
 			@total_words += count
@@ -48,7 +48,7 @@ class Bayes < Classifier::Base
 	#     b.untrain :this, "This text"
 	def untrain(category, text)
 		category = prepare_category_name(category)
-    word_hash(text).each do |word, count|
+    clean_word_hash(text).each do |word, count|
 			if @total_words >= 0
 				orig = @categories[category][word] || 0
 				@categories[category][word]     ||=     0
@@ -72,7 +72,7 @@ class Bayes < Classifier::Base
 		@categories.each do |category, category_words|
 			score[category.to_s] = 0
 			total = category_words.values.sum
-			word_hash(text).each do |word, count|
+			clean_word_hash(text).each do |word, count|
 				s = category_words.has_key?(word) ? category_words[word] : 0.1
 				score[category.to_s] += Math.log(s/total.to_f)
 			end
