@@ -11,6 +11,10 @@ module Classifier
       val.to_s.gsub("_"," ").capitalize
     end
     
+    def get_options
+      @options
+    end
+    
     # Removes common punctuation symbols, returning a new string. 
     # E.g.,
     #   "Hello (greeting's), with {braces} < >...?".without_punctuation
